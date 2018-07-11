@@ -7,7 +7,7 @@ compileScalastyle := scalastyle.in(Compile).toTask("").value
 lazy val root = (project in file("."))
   .configs(IntegrationTest)
   .settings(
-    name := "alpakka-ibm-mq",
+    name := "alpakka-ibm-mq-example",
     version := "0.1",
     scalaVersion := "2.12.6",
     organization := "com.example",

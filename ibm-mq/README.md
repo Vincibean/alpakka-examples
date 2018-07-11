@@ -23,6 +23,6 @@ or
 Started web server
 ```
 
-You can view the IBM MQ administration interface at [https://localhost:9443]().
+You can view the IBM MQ administration interface at https://localhost:9443.
 
 Docker will continue to run the container until you terminate the process, for example by typing _Control-C_ in the terminal.

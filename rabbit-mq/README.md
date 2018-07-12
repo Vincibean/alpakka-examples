@@ -1,26 +1,20 @@
-# Alpakka with IBM MQ Example
+# Alpakka with RabbitMQ Example
 
-## Start IBM MQ Docker image
+## Start RabbitMQ Docker image
 
-IBM provides a Docker image that runs MQ and sets up a few demonstration queues.
-Our example application will send messages to these demonstration queues.
+The Docker community provides a [Docker image](https://hub.docker.com/_/rabbitmq/) that runs RabbitMQ.
+Our example application will create some demonstration queues and send messages to them.
 
-To start a docker container based on this image, run:
+To start a Docker container based on this image, run:
 
 ```
-$ docker run --env LICENSE=accept --env MQ_QMGR_NAME=QM1 --publish 1414:1414 --publish 9443:9443 ibmcom/mq:9
+$ docker-compose up amqp
 ```
-
-Note that the `--env LICENSE=accept` argument indicates that you
-[accept the Docker image licenses](https://github.com/ibm-messaging/mq-docker#usage).
  
 Once the container is running you'll see a message like:
 
 ```
-Started web server
+Server startup complete
 ```
 
-You can view the IBM MQ administration interface at [https://localhost:9443].
-
-Docker will continue to run the container until you terminate the process, for example by
-typing _Control-C_ in the terminal.
+Docker will continue to run the container until you terminate the process, for example by typing _Control-C_ in the terminal.

@@ -31,7 +31,7 @@ class AlpakkaSlickIntegrationTest(implicit ee: ExecutionEnv) extends Specificati
 
     val us = (1 to 42).map(id => id -> s"User #$id")
 
-    val insert = Source(us).runWith(Slick.sink(user => sqlu"INSERT INTO ALPAKKA_SLICK_SCALADSL_TEST_USERS VALUES(${user._1}, ${user._2})"))
+    val insert = Source(us).runWith(Slick.sink(users +=))
     val select = Slick.source(users.distinct.result).runWith(Sink.seq)
     val result = for {
       _ <- insert
